@@ -348,6 +348,9 @@ func (h *OAuthHandler) getServerMetadata(ctx context.Context) (*AuthServerMetada
 		// If AuthServerMetadataURL is explicitly provided, use it directly
 		if h.config.AuthServerMetadataURL != "" {
 			h.fetchMetadataFromURL(ctx, h.config.AuthServerMetadataURL)
+			if h.serverMetadata == nil {
+				h.metadataFetchErr = errors.New("failed to fetch metadata from URL")
+			}
 			return
 		}
 
