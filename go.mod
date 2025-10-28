@@ -1,4 +1,4 @@
-module github.com/ArcadeAI/mcp-go
+module github.com/mark3labs/mcp-go
 
 go 1.23.0
 
